@@ -3,71 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TybaltCapulet | gram</title>
+    <title>TybaltCapulet | notInstagram</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="border">
+<div class="border">
+
     <section class="profile">
 
         <div class="profile-top">
             <img src="images/tybaltpfp.png" alt="TybaltCapulet">
 
             <div class="profile-info">
-            <h2>TybaltCapulet</h2>
-                
-            <div class="stats">
-                <div>
-                    <strong>5</strong>
-                    <span>posts</span>
+                <h2>TybaltCapulet</h2>
+
+                <div class="stats">
+                    <div>
+                        <strong>5</strong>
+                        <span>posts</span>
+                    </div>
+                    <div>
+                        <strong>455</strong>
+                        <span>followers</span>
+                    </div>
+                    <div>
+                        <strong>4</strong>
+                        <span>following</span>
+                    </div>
                 </div>
-                <div>
-                    <strong>455</strong>
-                    <span>followers</span>
-                </div>
-                <div>
-                    <strong>4</strong>
-                    <span>following</span>
-                </div>
-            </div>
             </div>
         </div>
 
         <p class="bio">👑Proud Capulet<br>🔥DM me if u wanna battle</p>
-
         <div class="actions">
-        <button class="follow">Follow</button>
-        <button class="message">Message</button>
-        <button class="icon">Friend</button>
+            <button class="follow">Follow</button>
+            <button class="message">Message</button>
+            <button class="icon">Friend</button>
         </div>
-        
+
     </section>
 
     <div class="post-grid">
-        <div class="post"><img src="images/post1.jpg" onclick="openModal(this.src)"></div>
-        <div class="post"><img src="images/post2.jpg" onclick="openModal(this.src)"></div>
-        <div class="post"><img src="images/post3.jpg" onclick="openModal(this.src)"></div>
-        <div class="post"><img src="images/post4.jpg" onclick="openModal(this.src)"></div>
-        <div class="post"><img src="images/post5.png" onclick="openModal(this.src)"></div>
+        <div class="post">
+            <img src="images/post1.jpg"
+                 data-caption="Saw this dweeb fighting with servants. I'll show you a real fight!(1.1)"
+                 data-hashtags="#r"
+                 data-comments="LadyCapulet: Slay, Tybalt! You got this.|MercutiYOLO: So typical of you.. always looking for a fight"
+                 onclick="openModal(this)">
+        </div>
+
+        <div class="post">
+            <img src="images/post3.jpg"
+                 data-caption="Romeo be like"
+                 data-hashtags="#coming4youRomeo"
+                 data-comments="LadyCapulet: How dare he insult the Capulet name!"
+                 onclick="openModal(this)">
+        </div>
+
+        <div class="post">
+            <img src="images/post2.jpg"
+                 data-caption='Dont mess with me. "I will withdraw, but this intrusion shall/Now seeming sweet convert to bittrest gall" (1.5)'
+                 data-hashtags="#coming4youRomeo"
+                 data-comments="LadyCapulet: No mercy for disrespect!|MercutiYOLO: That's a nice gun"
+                 onclick="openModal(this)">
+        </div>
+
+        <div class="post">
+            <img src="images/post4.webp"
+                 data-caption='Preparing for my fight with Romeo. "To strike him dead I hold it not a sin"(1.5).'
+                 data-hashtags="#coming4youRomeo"
+                 data-comments="LordCapulet: Do not display violence so publically..|MercutiYOLO: Take me on too|TybaltCapulet @MercutiYOLO: Are you so eager to die?"
+
+                 onclick="openModal(this)">
+        </div>
+
+        <div class="post">
+            <img src="images/post5.png"
+                 data-caption='"Romeo, the hate I bear thee can afford No better term than this: thou art a villain." (3.1)'
+                 data-hashtags="#readyforbattle #getreadytogetrekt"
+                data-comments="LadyCapulet: A villain indeed! Vengeance will come.. Romeo must not live!|Angelica111: O Tybalt! Who woudve thought I'd ever see you dead?|
+LordCapulet RIP Tybalt. He was taken too soon"
+                 onclick="openModal(this)">
+        </div>
+
     </div>
 
+</div>
+
+<!-- MODAL -->
 <div class="modal" id="modal">
 
     <div class="modal-content">
 
-        <div class="modal-header">
-            <img id="modalPfp" src="images/tybaltpfp.png">
-            <span id="modalUsername">TybaltCapulet</span>
+        <div class="modal-left">
+
+            <div class="modal-header">
+                <img id="modalPfp" src="images/tybaltpfp.png">
+                <span id="modalUsername">TybaltCapulet</span>
+            </div>
+
+            <div class="modal-image-box">
+                <img id="modalImg" src="" alt="if you see this that means I made a code bug">
+            </div>
+
+            <div class="modal-actions">
+                <button id="likeBtn">
+                    <i class="fa-regular fa-heart" id="likeIcon"></i> Like
+                </button>
+                <button>
+                    <i class="fa-regular fa-comment"></i> Comment
+                </button>
+            </div>
+
+            <div class="modal-caption" id="modalCaption">
+                <p>Default caption</p>
+                <p class="hashtags">#default #hashtags</p>
+            </div>
+
         </div>
 
-        <div class="modal-image-box">
-            <img id="modalImg" src="" alt="Full Post">
-        </div>
+        <!-- RIGHT SIDE -->
+        <div class="modal-right" id="commentPanel">
 
-        <div class="modal-caption" id="modalCaption">
-            <p>"Romeo, the hate I bear thee can afford No better term than this: thou art a villain." (3.1)</p>
-            <p style="color:  #1a5c8b;">#readyforbattle #getreadytogetrekt</p>
+            <div class="comment-header">
+                Comments
+            </div>
+
+            <div class="comment-list">
+                <p><strong>User1:</strong> Nice post 🔥</p>
+            </div>
+
         </div>
 
     </div>
@@ -75,7 +142,6 @@
     <span class="close" id="closeBtn">&times;</span>
 </div>
 
-    <script src="scripts.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
-
